@@ -1,0 +1,157 @@
+* {
+  font-family: "Roboto", sans-serif;
+}
+
+.container {
+  display: grid;
+  grid-template-columns: 1fr;
+  grid-template-rows: repeat(3, 1fr);
+  grid-column-gap: 0px;
+  grid-row-gap: 0px;
+}
+
+.container h1 {
+  display: block;
+  width: 90%;
+  grid-area: 1 / 1 / 2 / 3;
+  font-size: 3.5rem;
+  font-weight: 900;
+  color: #3f51b5;
+  text-shadow: #000 3px 3px 0px, #000 3px -3px 0px, #000 -3px 3px 0px,
+    #000 -3px -3px 0px, #000 3px 0px 0px, #000 0px 3px 0px, #000 -3px 0px 0px,
+    #000 0px -3px 0px;
+  font-weight: 900;
+  place-self: center;
+  text-align: center;
+}
+
+.container h1 span {
+  color: #e91e63;
+}
+
+.hangman {
+  grid-area: 2 / 1 / 3 / 2;
+  height: 220px;
+  width: 70px;
+  place-self: center;
+}
+
+.buttons {
+  width: 90%;
+  grid-area: 3 / 1 / 4 / 2;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  margin: 0 auto;
+  place-self: center;
+}
+
+.buttons button:nth-child(1) {
+  background-color: #9d27b0;
+  font-weight: 600;
+  text-shadow: #000 2px 2px 0px, #000 2px -2px 0px, #000 -2px 2px 0px,
+    #000 -2px -2px 0px, #000 2px 0px 0px, #000 0px 2px 0px, #000 -2px 0px 0px,
+    #000 0px -2px 0px;
+}
+
+.buttons button:nth-child(2) {
+  color: #000;
+  font-weight: 800;
+}
+
+.buttons button {
+  width: 100%;
+  padding: 10px;
+  margin-bottom: 20px;
+  border-radius: 5px;
+  border: 3px solid black;
+  color: #ffe0b2;
+  font-size: 18px;
+  cursor: pointer;
+  text-transform: uppercase;
+}
+
+.palabra{
+  display: flex;
+  justify-content: center;
+  margin: 20px 0 40px 0;  
+}
+
+.letra{
+  width: 20px;
+  margin: 5px;
+  border-bottom: 2px solid black;
+  font-size: 20px;
+  text-align: center;
+  padding-bottom: 1px;
+}
+
+.letra p{
+  opacity: 0;
+  
+}
+
+ .ahorcado{
+  display: flex;
+  justify-content: center;
+} 
+
+.horca{
+  text-align: center;
+  width: 120px;
+  height: 300px;
+}
+
+footer{
+  text-align: center;
+}
+
+@media (min-width: 768px) {
+  .container {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    grid-template-rows: repeat(2, 1fr);
+    grid-column-gap: 0px;
+    grid-row-gap: 0px;
+  }
+
+  .container h1 {
+   /*  text-align: left; */
+    font-size: 5rem;
+    grid-area: 1 / 1 / 2 / 2;
+    place-self: center;
+    text-shadow: #000 4px 4px 0px, #000 4px -4px 0px, #000 -4px 4px 0px,
+      #000 -4px -4px 0px, #000 4px 0px 0px, #000 0px 4px 0px, #000 -4px 0px 0px,
+      #000 0px -4px 0px;
+  }
+
+  .container span {
+    display: block;
+  }
+
+  .buttons {
+    grid-area: 2 / 1 / 3 / 2;
+    
+  }
+
+  .buttons button {
+    width: 450px;
+    padding: 20px 0;
+    border: 4px solid black;
+  }
+
+  .hangman {
+    height: 90vh;
+    width: 160px;
+    grid-area: 1 / 2 / 3/ 3;
+    place-self: center;
+  }
+
+  .horca{
+    text-align: center;
+    width: 160px;
+    height: 300px;
+    margin-top: 20px;
+  }
+
+}
