@@ -28,7 +28,7 @@ palabra.innerHTML= hola
 
 let count1 = 0;
 let count2 = 0;
-document.addEventListener('keydown',(e)  => {
+document.addEventListener('keyup',(e)  => {
   const letterSecret = document.querySelectorAll('#palabra span')
   const key = e.key;
   const img = document.querySelector('.horca')
