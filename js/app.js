@@ -1,7 +1,13 @@
 const desistir = document.getElementById("desistir");
 const inputMovil = document.getElementById("input");
+const inputAux = document.getElementById("inputAux");
+
+let count1 = 0;
+let count2 = 0;
+let keyPressed = [];
+
 const rendirse = () => {
-  window.location.href = "/Juego-Ahorcado";
+  window.location.href = "/";
 };
 
 const main = () => {
@@ -32,10 +38,6 @@ const main = () => {
 
   newWord = localStorage.getItem("palabra");
 
-  start.addEventListener("click", () => {
-    window.location.href = "/Juego-Ahorcado/pages/game.html";
-  });
-
   const secretWord = words[random];
   newWord = newWord && newWord.replace(/ /g, "");
 
@@ -48,15 +50,18 @@ const main = () => {
   hola = hola.join("");
   palabra.innerHTML = hola;
 
-  let count1 = 0;
-  let count2 = 0;
-  let keyPressed = [];
   //
-  const events = (movil, inputMovil) => {
-    (movil ? inputMovil : document).addEventListener("keyup", (e) => {
+  start.addEventListener("click", () => {
+    window.location.href = "/game.html";
+  });
+
+  events();
+  function events() {
+    inputMovil.focus();
+    inputMovil.addEventListener("keyup", (e) => {
       const inputAux = document.getElementById("inputAux");
       const letterSecret = document.querySelectorAll("#palabra span");
-      const key = movil ? e.target.value.toLowerCase() : e.key.toLowerCase();
+      const key = e.target.value.toLowerCase();
       const img = document.querySelector(".horca");
 
       let acierto = false;
@@ -80,25 +85,18 @@ const main = () => {
       if (count1 === spaces.length) {
         swal("You are win", "Good job!", "success").then(() => {
           localStorage.clear();
-          window.location.href = "/Juego-Ahorcado/pages/game.html";
+          window.location.href = "/game.html";
         });
       } else if (count2 === 5) {
         swal("You are Lose", "Oops... try again!", "error").then(() => {
           localStorage.clear();
-          window.location.href = "/Juego-Ahorcado/pages/game.html";
+          window.location.href = "/game.html";
         });
       }
-      inputMovil && (e.target.value = "");
-      movil && inputAux.focus();
-      movil ? inputMovil.focus() : "";
+      inputMovil.value = "";
+      inputAux.focus();
+      inputMovil.focus();
     });
-  };
-
-  if (screen.width < 768) {
-    events(true, inputMovil);
-  } else {
-    inputMovil.classList.add("show");
-    events();
   }
 };
 
