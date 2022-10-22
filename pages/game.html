@@ -11,18 +11,30 @@
       href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;500;700;900&display=swap"
       rel="stylesheet"
     />
-   
+
     <title>Juego del Ahorcado</title>
   </head>
   <body>
     <div class="container-game">
-      <div class='ahorcado' id="ahorcado">
-        <img class='horca' src="../images/image.svg" alt="ahorcado">
+      <div class="ahorcado" id="ahorcado">
+        <img class="horca" src="../images/image.svg" alt="ahorcado" />
+        <input
+          type="text"
+          class="input-movil"
+          id="input"
+          placeholder="pulse una tecla"
+        />
+        <input
+          type="text"
+          class="input-aux"
+          id="inputAux"
+          placeholder="pulse una tecla"
+        />
       </div>
-      <div class='palabra' id="palabra"></div>
+      <div class="palabra" id="palabra"></div>
       <div class="buttons">
-        <button type="button"  id="start">Nuevo Juego</button>
-        <button id="desistir" onclick=rendirse()>Desistir</button>
+        <button type="button" id="start">Nuevo Juego</button>
+        <button id="desistir" onclick="rendirse()">Desistir</button>
       </div>
     </div>
     <script src="../js/app.js"></script>
