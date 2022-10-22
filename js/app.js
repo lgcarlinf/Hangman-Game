@@ -79,7 +79,7 @@ const main = () => {
 
       if (!acierto) {
         count2++;
-        img.src = `../images/image${count2}.svg`;
+        img.src = `../images/img${count2}.svg`;
       }
 
       if (count1 === spaces.length) {
