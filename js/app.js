@@ -51,7 +51,7 @@ const main = () => {
   let count1 = 0;
   let count2 = 0;
   let keyPressed = [];
-
+  //
   const events = (movil, inputMovil) => {
     (movil ? inputMovil : document).addEventListener("keyup", (e) => {
       const inputAux = document.getElementById("inputAux");
