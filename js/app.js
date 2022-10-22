@@ -1,7 +1,7 @@
 const desistir = document.getElementById("desistir");
 const inputMovil = document.getElementById("input");
 const rendirse = () => {
-  window.location.href = "/";
+  window.location.href = "/Juego-Ahorcado";
 };
 
 const main = () => {
@@ -80,12 +80,12 @@ const main = () => {
       if (count1 === spaces.length) {
         swal("You are win", "Good job!", "success").then(() => {
           localStorage.clear();
-          window.location.href = "./pages/game.html";
+          window.location.href = "/game.html";
         });
       } else if (count2 === 5) {
         swal("You are Lose", "Oops... try again!", "error").then(() => {
           localStorage.clear();
-          window.location.href = "./pages/game.html";
+          window.location.href = "/game.html";
         });
       }
       inputMovil && (e.target.value = "");
