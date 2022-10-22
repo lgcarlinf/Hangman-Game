@@ -33,7 +33,7 @@ const main = () => {
   newWord = localStorage.getItem("palabra");
 
   start.addEventListener("click", () => {
-    window.location.href = "../pages/game.html";
+    window.location.href = "./pages/game.html";
   });
 
   const secretWord = words[random];
@@ -80,12 +80,12 @@ const main = () => {
       if (count1 === spaces.length) {
         swal("You are win", "Good job!", "success").then(() => {
           localStorage.clear();
-          window.location.href = "../pages/game.html";
+          window.location.href = "./pages/game.html";
         });
       } else if (count2 === 5) {
         swal("You are Lose", "Oops... try again!", "error").then(() => {
           localStorage.clear();
-          window.location.href = "../pages/game.html";
+          window.location.href = "./pages/game.html";
         });
       }
       inputMovil && (e.target.value = "");
