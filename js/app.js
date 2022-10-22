@@ -33,7 +33,7 @@ const main = () => {
   newWord = localStorage.getItem("palabra");
 
   start.addEventListener("click", () => {
-    window.location.href = "./pages/game.html";
+    window.location.href = "/game.html";
   });
 
   const secretWord = words[random];
